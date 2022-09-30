@@ -1,178 +1,46 @@
 <!DOCTYPE html>
-<!-- Esta es la primera pagina web del curso -->
+<!-- Esta es la primera página web del curso -->
 <html>
     <head>
         <title>TechShop</title>
-        <meta charset="UTF-8">
-        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8"/>        
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header>
-            <h1 id="titulo">Pagina principal </h1>
-
+        <header class="header">            
+            <nav class="nav">
+                <a class="logo nav-link" href="index.html">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo7.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">iFrame</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formulario.html">Form</a></li>
+                </ul>
+            </nav>
         </header>
-        <nav>
-            <a href="ejemplo7.html">Back</a>
-            <a href="index.html">Home</a>
-            <a href="ejemplo2.html">Next</a>
-        </nav>
-        <aside>
-            <h2>Promo del dia</h2>
-            <P>Descuentos de hasta 30% si compra mas de 5 productos...</p>
-        </aside>
+
 
         <section>
-            <h2>Nuestros Productos</h2>
+            <h2>Nuestros productos</h2>
             <article class="producto">
                 <header>
-                    <h3>Producto001</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
+                    <h3>Producto 001</h3>
+                </header>                
+                <p>A aenean tortor habitasse volutpat libero risus consequat cum urna augue mus eleifend, tristique suscipit porttitor sagittis malesuada dignissim taciti orci morbi fames lacus maecenas magnis, nostra natoque inceptos convallis fringilla diam hendrerit scelerisque lacinia pretium quam. Velit volutpat netus cum, neque feugiat. Enim tristique felis nec ac parturient augue aptent, conubia eget platea risus curabitur ridiculus sociosqu lacinia, lobortis nisl facilisi class penatibus mollis.</p>
                 <figure>
-                     <img src="img/marmota.jpg" alt="marmota"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto002</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                    <img src="img/leopardo.jpg" alt="leopardo"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto003</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                     <img src="img/marmota.jpg" alt="marmota"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto004</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                    <img src="img/leopardo.jpg" alt="leopardo"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto005</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                     <img src="img/marmota.jpg" alt="marmota"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto006</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                    <img src="img/leopardo.jpg" alt="leopardo"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto007</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                     <img src="img/marmota.jpg" alt="marmota"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto008</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                    <img src="img/leopardo.jpg" alt="leopardo"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto009</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                     <img src="img/marmota.jpg" alt="marmota"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
-                </figure>
-                <footer>
-                    <a href="agregarACarrito">Comprar</a>
-                </footer>
-            </article>
-            
-            <article>
-                <header>
-                    <h3>Producto010</h3> 
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-                <figure>
-                    <img src="img/leopardo.jpg" alt="leopardo"width="100"/>
-                    <figcaption> 25.000.00</figcaption>
+                    <img src="img/marmota.jpg" alt="marmota grande en el suelo" width="100"/>
+                    <figcaption>¢25.000.00</figcaption>
                 </figure>
                 <footer>
                     <a href="agregarACarrito">Comprar</a>
                 </footer>
             </article>
         </section>
-
         <footer>
-            <p> Sitio desarrollado por SEC 2022 &copy<a href="mailto;sec@gmail.com;"a>Contactenos</p>
-        </footer>
+            <p>Sitio desarrollado por SEC 2022 &copy <a href="mailto:sec@gmail.com">Contactentos</a></p>
+        </footer>       
 
-
-        <h1 style="text-align:center;background-color: black;color: white">Pagina Principal</h1>
-        <p>Esta es la primera pagina del proyecto</p>
-        <p style="text-align: right">  Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum cum sem, gravida metus commodo sociosqu ornare himenaeos tortor habitant. Vitae cursus rhoncus nullam felis cum morbi commodo class, integer libero vivamus inceptos habitant litora venenatis conubia egestas, id purus dui velit ridiculus duis hendrerit. Orci cubilia nulla leo condimentum ad natoque libero cursus nostra, ligula pharetra iaculis luctus egestas mattis sapien lectus, hendrerit habitasse donec laoreet bibendum auctor dui ac. Nullam libero lectus faucibus ridiculus ac varius sociis inceptos, sociosqu rutrum conubia nisi malesuada turpis non ante, phasellus habitant tempor suscipit tristique dapibus arcu.</p>
-        <img src="img/leopardo.jpg" alt="Imagen de un leopardo"width="400"/>
-        <img src="img/marmota.jpg" alt="Imagen de una marmota"width="400"/>
     </body>
 </html>
