@@ -32,7 +32,7 @@ public class ArticuloController {
         return "/articulo/modificar";
     }
 
-    @PostMapping("/articulo/listado")
+    @PostMapping("/articulo/guardar")
     public String articuloGuardar(Articulo articulo) {
         articuloService.save(articulo);
         return "redirect:/articulo/listado";
