@@ -19,9 +19,14 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
     private CreditoDao creditoDao;
-    
+
     //Los metodos para poder hacer un CRUD
     //Create Read Update Delete
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> getClientesPorApellidos(String apellidos) {
+        return (List<Cliente>) clienteDao.findByApellidos(apellidos);
+    }
 
     @Override
     @Transactional(readOnly = true)
@@ -34,16 +39,22 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
     }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public Cliente getClientePorApellidos(Cliente cliente) {
+        return clienteDao.findByApellidos(cliente.getApellidos()).orElse(null);
+    }
 
     @Override
     @Transactional
     public void save(Cliente cliente) {
         //Si el idCliente es 0, lo inserta... si tiene algun valor hace el update de ese registro...
-        
+
         Credito credito = cliente.getCredito();
         credito = creditoDao.save(credito);
         cliente.setCredito(credito);
-        
+
         clienteDao.save(cliente);
     }
 

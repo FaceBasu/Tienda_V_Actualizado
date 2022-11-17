@@ -1,5 +1,6 @@
 package com.tienda.controller;
 
+import static com.fasterxml.jackson.databind.cfg.CoercionInputShape.String;
 import com.tienda.dominio.Cliente;
 import com.tienda.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,23 +20,36 @@ public class ClienteController {
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
         var clientes = clienteService.getClientes();
+        //var clientes = clienteService.getPorApellidos("Contreras Mora");
         model.addAttribute("clientes", clientes);
         return "/cliente/listado";
     }
 
+    @GetMapping("/cliente/busqueda")
+    public String clienteBusqueda(Model model) {
+        //var clientes = clienteService.getClientesPorApellidos("");
+        var clientes = clienteService.getClientesPorApellidos("");
+        model.addAttribute("clientes", clientes);
+        return "/cliente/busqueda";
+
+    }
     @GetMapping("/cliente/nuevo")
-    public String clienteNuevo(Cliente cliente) {
+    public String clienteNuevo(Cliente cliente
+    ) {
         return "/cliente/modificar";
     }
 
     @PostMapping("/cliente/guardar")
-    public String clienteGuardar(Cliente cliente) {
+    public String clienteGuardar(Cliente cliente
+    ) {
         clienteService.save(cliente);
         return "redirect:/cliente/listado";
+
     }
 
     @GetMapping("/cliente/actualiza/{idCliente}")
     public String clienteActualiza(Cliente cliente, Model model) {
+
         cliente = clienteService.getCliente(cliente);
         model.addAttribute("cliente", cliente);
         return "/cliente/modificar";
@@ -43,9 +57,18 @@ public class ClienteController {
     }
 
     @GetMapping("/cliente/elimina/{idCliente}")
-    public String clienteElimina(Cliente cliente) {
+    public String clienteElimina(Cliente cliente
+    ) {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
-
     }
+
+    @GetMapping("/cliente/buscar/{apellidos}")
+    public String clienteBuscar(String apellidos, Model model) {
+
+        apellidos = clienteService.getClientePorApellidos(apellidos);
+        model.addAttribute("cliente", cliente);
+        return "/cliente/modificar";
+    
+}
 }
