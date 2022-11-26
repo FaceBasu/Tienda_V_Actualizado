@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html
+<html    
+    xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org"
-    xmlns="http://www.w3.org/1999/xhtml">
-    <head>
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8"/>
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8"/>       
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
-            <h2> Datos de Categoria</h2>
-            <a th:href="@{/categoria/listado}">Regresar</a>  
+            <h2>[[#{categoria.datos}]]</h2>
+            <a th:href="@{/categoria/listado}">[[#{accion.regresar}]]</a>  
             <hr>
                 <form th:action="@{/categoria/guardar}"
                       method="post"
                       th:object="${categoria}">
                     <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
+                    
                     <fieldset> 
-                        <label for="idCategoria">Id Categoria</label>
-                        <input type="number" name="idCategoria"
-                               required=true
-                               placeholder="xxxx"
-                               size="15"
-                               th:field="*{idCategoria}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="descripcion">Descripcion</label>
+                        <label for="descripcion">[[#{categoria.descripcion}]]</label>
                         <input type="text" name="descripcion" 
                                required=true
                                placeholder="Descripcion"
@@ -36,12 +28,12 @@
                     </fieldset> 
 
                     <fieldset> 
-                        <label for="activo">Activo:</label>
+                        <label for="activo">[[#{categoria.activo}]]</label>
                         <input type="checkbox"
                                name="activo" th:field="*{activo}"/>
                     </fieldset> 
                     <hr/>
-                    <input type="submit" name="guardar" value="guardar"/>
+                    <button type="submit" th:text="#{accion.guardar}"/>
                 </form>
 
                 <footer th:replace="layout/plantilla :: footer">

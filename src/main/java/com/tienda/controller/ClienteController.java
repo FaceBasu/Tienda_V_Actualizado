@@ -63,12 +63,6 @@ public class ClienteController {
         return "redirect:/cliente/listado";
     }
 
-    @GetMapping("/cliente/buscar/{apellidos}")
-    public String clienteBuscar(String apellidos, Model model) {
-
-        apellidos = clienteService.getClientePorApellidos(apellidos);
-        model.addAttribute("cliente", cliente);
-        return "/cliente/modificar";
     
 }
-}
+
