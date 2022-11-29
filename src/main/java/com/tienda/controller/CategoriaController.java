@@ -20,6 +20,13 @@ public class CategoriaController {
     public String inicio(Model model) {
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
+        
+        var totalCategorias = 0;
+        for (var ca : categorias) {
+            totalCategorias += ca.idCategoria;
+        }
+        model.addAttribute("totalCategorias", totalCategorias);
+        
         return "/categoria/listado";
     }
 
@@ -34,7 +41,7 @@ public class CategoriaController {
         return "redirect:/categoria/listado";
     }
 
-    @GetMapping("/categoria/actualiza/{idCategoria}")
+    @GetMapping("/categoria/modificar/{idCategoria}")
     public String categoriaActualiza(Categoria categoria, Model model) {
         categoria = categoriaService.getCategoria(categoria);
         model.addAttribute("categoria", categoria);
@@ -42,7 +49,7 @@ public class CategoriaController {
 
     }
 
-    @GetMapping("/categoria/elimina/{idCategoria}")
+    @GetMapping("/categoria/eliminar/{idCategoria}")
     public String categoriaElimina(Categoria categoria) {
         categoriaService.delete(categoria);
         return "redirect:/categoria/listado";

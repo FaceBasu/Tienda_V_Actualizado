@@ -24,6 +24,13 @@ public class ArticuloController {
     public String inicio(Model model) {
         var articulos = articuloService.getArticulos(false);
         model.addAttribute("articulos", articulos);
+        
+        var totalArticulos = 0;
+        for (var a : articulos) {
+            totalArticulos += a.existencias;
+        }
+        model.addAttribute("totalArticulos", totalArticulos);
+        
         return "/articulo/listado";
     }
 
@@ -38,7 +45,7 @@ public class ArticuloController {
         return "redirect:/articulo/listado";
     }
 
-    @GetMapping("/articulo/actualiza/{idArticulo}")
+    @GetMapping("/articulo/modificar/{idArticulo}")
     public String articuloActualiza(Articulo articulo, Model model) {
         articulo = articuloService.getArticulo(articulo);
         model.addAttribute("articulo", articulo);
@@ -50,7 +57,7 @@ public class ArticuloController {
 
     }
 
-    @GetMapping("/articulo/elimina/{idArticulo}")
+    @GetMapping("/articulo/eliminar/{idArticulo}")
     public String articuloElimina(Articulo articulo) {
         articuloService.delete(articulo);
         return "redirect:/articulo/listado";

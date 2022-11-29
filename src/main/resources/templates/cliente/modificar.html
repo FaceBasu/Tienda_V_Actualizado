@@ -1,72 +1,13 @@
-<!DOCTYPE html>
-<html    
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8"/>       
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-            <h2>[[#{cliente.datos}]]</h2>
-            <a th:href="@{/cliente/listado}">[[#{accion.regresar}]]</a>  
-            <hr>
-                <form th:action="@{/cliente/guardar}"
-                      method="post"
-                      th:object="${cliente}">
-                    <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
-                    <fieldset> 
-                        <label for="nombre">[[#{cliente.nombre}]]</label>
-                        <input type="text" name="nombre"
-                               required=true
-                               placeholder="Nombre"
-                               size="15"
-                               th:field="*{nombre}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="apellidos">[[#{cliente.apellidos}]]</label>
-                        <input type="text" name="apellidos" 
-                               required=true
-                               placeholder="Apellidos"
-                               size="25"
-                               th:field="*{apellidos}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="correo">[[#{cliente.correo}]]</label>
-                        <input type="email" name="correo"
-                               required=true
-                               placeholder="correo@xxxxx.com"
-                               size="25"
-                               th:field="*{correo}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="telefono">[[#{cliente.telefono}]]</label>
-                        <input 
-                            type="tel" name="telefono" 
-                            placeholder="8888-8888"
-                            required=true
-                            size="9"
-                            th:field="*{telefono}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="credito">[[#{cliente.limite}]]</label>
-                        <input type="number"
-                               required=true
-                               name="credito" th:field="*{credito.limite}"/>
-                    </fieldset> 
-                    <hr/>
-                    <button type="submit" th:text="#{accion.guardar}"/>
-                </form>
-        </div>
-
-        <footer th:replace="layout/plantilla :: footer">
-            </div>
-
+        <header th:replace="layout/plantilla :: header" />
+        <section th:replace="cliente/fragmentosCliente :: editarCliente"/> 
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>

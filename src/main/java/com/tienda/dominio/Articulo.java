@@ -19,7 +19,7 @@ public class Articulo implements Serializable{
     private String descripcion;
     private String detalle;
     private double precio;
-    private int existencias;
+    public int existencias;
     private boolean activo;
 
     public Articulo() {

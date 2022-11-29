@@ -8,37 +8,12 @@
         <meta charset="UTF-8"/>       
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-            <h2>[[#{categoria.titulo}]]</h2>
-            <a th:href="@{/categoria/nuevo}">[[#{categoria.nuevo}]]</a>  
-            <div th:if="${categorias != null and !categorias.empty}"> 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>[[#{categoria.descripcion}]]</th>
-                            <th>[[#{categoria.activo}]]</th>
-                            <th>[[#{accion.eliminar}]]</th>
-                            <th>[[#{accion.actualizar}]]</th>
+        <header th:replace="layout/plantilla :: header" />
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="categoria : ${categorias}">
-                            <td>[[#{categoria.descripcion}]]</td>
-                            <td>[[#{categoria.activo}]]</td>
-                            <td><a th:href="@{/categoria/elimina/} + ${categoria.idCategoria}">[[#{accion.eliminar}]]</a></td>
-                            <td><a th:href="@{/categoria/actualiza/} + ${categoria.idCategoria}">[[#{accion.actualizar}]]</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <section th:replace="categoria/fragmentosCategoria :: botonesAgregar"/>
+        <section th:replace="categoria/fragmentosCategoria :: agregarCategoria"/>
+        <section th:replace="categoria/fragmentosCategoria :: listadoCategorias"/>
 
-            <div th:if="${categorias == null or categorias.empty}">
-                <h3>[[#{categoria.no_mostrar}]]</h3>
-            </div>
-        </div>
         <footer th:replace="layout/plantilla :: footer">
-
     </body>
 </html>

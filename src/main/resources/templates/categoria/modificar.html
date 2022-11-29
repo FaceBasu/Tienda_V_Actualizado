@@ -1,43 +1,13 @@
-<!DOCTYPE html>
-<html    
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8"/>       
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-            <h2>[[#{categoria.datos}]]</h2>
-            <a th:href="@{/categoria/listado}">[[#{accion.regresar}]]</a>  
-            <hr>
-                <form th:action="@{/categoria/guardar}"
-                      method="post"
-                      th:object="${categoria}">
-                    <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
-                    
-                    <fieldset> 
-                        <label for="descripcion">[[#{categoria.descripcion}]]</label>
-                        <input type="text" name="descripcion" 
-                               required=true
-                               placeholder="Descripcion"
-                               size="25"
-                               th:field="*{descripcion}"/>
-                    </fieldset> 
-
-                    <fieldset> 
-                        <label for="activo">[[#{categoria.activo}]]</label>
-                        <input type="checkbox"
-                               name="activo" th:field="*{activo}"/>
-                    </fieldset> 
-                    <hr/>
-                    <button type="submit" th:text="#{accion.guardar}"/>
-                </form>
-
-                <footer th:replace="layout/plantilla :: footer">
-                    </div>
-
-                    </body>
-                    </html>
+        <header th:replace="layout/plantilla :: header" />
+        <section th:replace="categoria/fragmentosCategoria :: editarCategoria"/> 
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
+</html>

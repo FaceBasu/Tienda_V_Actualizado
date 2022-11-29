@@ -20,8 +20,15 @@ public class ClienteController {
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
         var clientes = clienteService.getClientes();
-        //var clientes = clienteService.getPorApellidos("Contreras Mora");
         model.addAttribute("clientes", clientes);
+
+        var limiteTotal = 0;
+        for (var c : clientes) {
+            limiteTotal += c.credito.limite;
+        }
+        model.addAttribute("limiteTotal", limiteTotal);
+        model.addAttribute("totalClientes", clientes.size());
+
         return "/cliente/listado";
     }
 
@@ -33,6 +40,7 @@ public class ClienteController {
         return "/cliente/busqueda";
 
     }
+
     @GetMapping("/cliente/nuevo")
     public String clienteNuevo(Cliente cliente
     ) {
@@ -47,7 +55,7 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/cliente/actualiza/{idCliente}")
+    @GetMapping("/cliente/modificar/{idCliente}")
     public String clienteActualiza(Cliente cliente, Model model) {
 
         cliente = clienteService.getCliente(cliente);
@@ -56,13 +64,11 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/cliente/elimina/{idCliente}")
+    @GetMapping("/cliente/eliminar/{idCliente}")
     public String clienteElimina(Cliente cliente
     ) {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
     }
 
-    
 }
-
