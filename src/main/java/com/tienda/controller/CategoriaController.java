@@ -23,6 +23,7 @@ public class CategoriaController {
         
         var totalCategorias = 0;
         for (var ca : categorias) {
+            
             totalCategorias += ca.idCategoria;
         }
         model.addAttribute("totalCategorias", totalCategorias);
